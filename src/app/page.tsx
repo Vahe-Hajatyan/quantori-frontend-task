@@ -15,5 +15,9 @@ export default function Home() {
     }
   }, [isAuthenticated, push]);
 
-  return <p className='text-2xl text-primary text-center mt-6'>Welcome To Home Page</p>;
+  return (
+      <p className="text-2xl text-primary text-center mt-6">
+        Welcome To Home Page
+      </p>
+  );
 }
