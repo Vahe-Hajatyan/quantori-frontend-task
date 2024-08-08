@@ -1,19 +1,18 @@
 'use client';
-import { useEffect } from 'react';
+import useAuth from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import useAuth from '@/hooks/useAuth'; // Importing the custom hook
-
-export default function Home() {
+const contact = () => {
   useAuth();
   const { isAuthenticated } = useSelector((state: any) => state.auth);
   const { push } = useRouter();
-
   useEffect(() => {
     if (!isAuthenticated) {
       push('/login');
     }
-  }, [isAuthenticated, push]);
+  }, [isAuthenticated]);
+  return <p className='text-2xl text-primary text-center mt-6'>Welcome To Contact Page</p>;
 
-  return <p className='text-2xl text-primary text-center mt-6'>Welcome To Home Page</p>;
-}
+};
+export default contact;

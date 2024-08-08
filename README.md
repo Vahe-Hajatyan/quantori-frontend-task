@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Next.js Project
+
+This is a Next.js project. Below you will find the commands you can use to develop, build, and start the project, as well as to lint the codebase.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (version 12.x or later)
+- npm (version 6.x or later) or Yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Vahe-Hajatyan/quantori-frontend-task
+
+   ```
+
+2. Navigate to the project directory:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd quantori-frontend-task
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+# or
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Available Scripts
 
-## Learn More
+In the project directory, you can run the following commands:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`npm run dev` or `yarn dev`
+Description: Runs the application in development mode.
+Usage: The application will start at http://localhost:3000. The page will automatically reload if you make edits. You will also see any lint errors in the console.
+`npm run build` or `yarn build`
+Description: Builds the application for production.
+Usage: This command creates an optimized production build in the .next directory. The build is optimized for best performance.
+`npm run start` or `yarn start`
+Description: Starts the Next.js application in production mode.
+Usage: Before running this command, make sure you have built the application using `npm run build` or `yarn build `. The application will start at `http://localhost:3000`.
+`npm run lint` or `yarn lint`
+Description: Runs the linter on your codebase to identify and fix linting issues.
+Usage: This command uses ESLint to analyze your project’s code for potential errors and code style issues.
