@@ -10,8 +10,8 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const auth = useSelector((state: any) => state.auth);
   const [data, setData] = useState({
-    username: 'emilys',
-    password: 'emilyspass',
+    username: '',
+    password: '',
   });
   const dispatch = useDispatch<TDispatch>();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
