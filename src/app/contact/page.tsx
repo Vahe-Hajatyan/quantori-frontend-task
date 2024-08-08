@@ -12,7 +12,12 @@ const contact = () => {
       push('/login');
     }
   }, [isAuthenticated]);
-  return <p className='text-2xl text-primary text-center mt-6'>Welcome To Contact Page</p>;
-
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <p className="text-2xl text-primary text-center">
+        Welcome To Contact Page
+      </p>
+    </div>
+  );
 };
 export default contact;

@@ -14,7 +14,13 @@ const about = () => {
       push('/login');
     }
   }, [isAuthenticated]);
-  return <p className='text-2xl text-primary text-center mt-6'>Welcome To About Page</p>;
-
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <p className="text-2xl text-primary text-center">
+        Welcome To About Page
+      </p>
+      
+    </div>
+  );
 };
 export default about;

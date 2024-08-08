@@ -16,8 +16,8 @@ export default function Home() {
   }, [isAuthenticated, push]);
 
   return (
-      <p className="text-2xl text-primary text-center mt-6">
-        Welcome To Home Page
-      </p>
+    <div className='flex justify-center items-center h-screen'>
+      <p className="text-2xl text-primary text-center ">Welcome To Home Page</p>
+    </div>
   );
 }

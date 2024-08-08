@@ -30,7 +30,10 @@ const Login = () => {
         <div>
           <form onSubmit={handleSubmit}>
             <div className="relative flex flex-col mb-4">
-              <label className="ml-3 text-xs" htmlFor="username">
+              <label
+                className={`ml-3 text-xs ${auth.error && 'text-red-500'}`}
+                htmlFor="username"
+              >
                 Username
               </label>
               <input
@@ -40,7 +43,9 @@ const Login = () => {
                 type="text"
                 id="username"
                 placeholder="Enter Your UserName"
-                className="w-11/12 h-11 border border-gray-400 rounded-2xl pl-10 pr-3 outline-none"
+                className={`w-11/12 h-11 border border-gray-400 rounded-2xl pl-10 pr-3 outline-none ${
+                  auth.error && 'border-red-500'
+                }`}
               />
               <Image
                 className="absolute top-6 left-2"
@@ -51,7 +56,10 @@ const Login = () => {
               />
             </div>
             <div className="relative flex flex-col mb-4">
-              <label className="ml-3 text-xs" htmlFor="password">
+              <label
+                className={`ml-3 text-xs ${auth.error && 'text-red-500'}`}
+                htmlFor="password"
+              >
                 Password
               </label>
               <input
@@ -61,7 +69,9 @@ const Login = () => {
                 type={showPassword ? 'text' : 'password'}
                 id="password"
                 placeholder="Enter Your password"
-                className="w-11/12 h-11 border border-gray-400 rounded-2xl pl-10 pr-3 outline-none"
+                className={`w-11/12 h-11 border border-gray-400 rounded-2xl pl-10 pr-3 outline-none ${
+                  auth.error && 'border-red-500'
+                }`}
               />
               <Image
                 className="absolute top-6 left-2"
