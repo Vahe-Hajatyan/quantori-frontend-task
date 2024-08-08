@@ -26,104 +26,107 @@ const Header = () => {
   useEffect(() => {
     setActivePage(path);
   }, [path]);
-  console.log(auth);
   return (
-    <nav className="h-14">
-      <div className="flex items-center justify-around h-full">
-        <div className="flex items-center">
-          <Image
-            priority
-            src={auth.user.image ? auth.user.image : '/person.svg'}
-            width={35}
-            height={35}
-            alt="person"
-          />
-          <div className="ml-4 xxs:hidden ss:block">
-            <Link
-              href={'/'}
-              className={`p-2 ${activePage === '' ? 'text-primary' : ''}`}
-              onClick={() => setActivePage('home')}
-            >
-              home
-            </Link>
-            <Link
-              href={'/contact'}
-              className={`p-2 ${
-                activePage === 'contact' ? 'text-primary' : ''
-              }`}
-              onClick={() => setActivePage('contact')}
-            >
-              contact
-            </Link>
-            <Link
-              href={'/about'}
-              className={`p-2 ${activePage === 'about' ? 'text-primary' : ''}`}
-              onClick={() => setActivePage('about')}
-            >
-              about
-            </Link>
-          </div>
-        </div>
-        <div className="relative sm:hidden ">
-          <button
-            onClick={() => setShowMenu(!showMenu)}
-            className="bg-primary text-white px-3 py-1 rounded-lg ml-3 ss:hidden xxs:block"
-          >
-            <p className="transform rotate-90">|||</p>
-          </button>
-          {showMenu && (
-            <div className="absolute w-24 top-[50px] -right-8 bg-white  border border-[#E5E5E5] rounded-xl ss:hidden xxs:flex flex-col">
+    <header className="fixed left-0 top-0 w-full h-14 bg-white">
+      <nav className="h-14">
+        <div className="flex items-center justify-around h-full">
+          <div className="flex items-center">
+            <Image
+              priority
+              src={auth.user.image ? auth.user.image : '/person.svg'}
+              width={35}
+              height={35}
+              alt="person"
+            />
+            <div className="ml-4 xxs:hidden ss:block">
               <Link
                 href={'/'}
                 className={`p-2 ${activePage === '' ? 'text-primary' : ''}`}
-                onClick={() => {
-                  setShowMenu(false);
-                  setActivePage('home');
-                }}
+                onClick={() => setActivePage('home')}
               >
                 home
               </Link>
-              <hr />
               <Link
                 href={'/contact'}
                 className={`p-2 ${
                   activePage === 'contact' ? 'text-primary' : ''
                 }`}
-                onClick={() => {
-                  setShowMenu(false);
-                  setActivePage('contact');
-                }}
+                onClick={() => setActivePage('contact')}
               >
                 contact
               </Link>
-              <hr />
               <Link
                 href={'/about'}
                 className={`p-2 ${
                   activePage === 'about' ? 'text-primary' : ''
                 }`}
-                onClick={() => {
-                  setShowMenu(false);
-                  setActivePage('about');
-                }}
+                onClick={() => setActivePage('about')}
               >
                 about
               </Link>
-              <hr />
-              <p onClick={loginOrLogout} className="p-2">
-                {auth.isAuthenticated ? 'Logout' : 'Login'}
-              </p>
             </div>
-          )}
+          </div>
+          <div className="relative sm:hidden ">
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              className="bg-primary text-white px-3 py-1 rounded-lg ml-3 ss:hidden xxs:block"
+            >
+              <p className="transform rotate-90">|||</p>
+            </button>
+            {showMenu && (
+              <div className="absolute w-24 top-[50px] -right-8 bg-white  border border-[#E5E5E5] rounded-xl ss:hidden xxs:flex flex-col">
+                <Link
+                  href={'/'}
+                  className={`p-2 ${activePage === '' ? 'text-primary' : ''}`}
+                  onClick={() => {
+                    setShowMenu(false);
+                    setActivePage('home');
+                  }}
+                >
+                  home
+                </Link>
+                <hr />
+                <Link
+                  href={'/contact'}
+                  className={`p-2 ${
+                    activePage === 'contact' ? 'text-primary' : ''
+                  }`}
+                  onClick={() => {
+                    setShowMenu(false);
+                    setActivePage('contact');
+                  }}
+                >
+                  contact
+                </Link>
+                <hr />
+                <Link
+                  href={'/about'}
+                  className={`p-2 ${
+                    activePage === 'about' ? 'text-primary' : ''
+                  }`}
+                  onClick={() => {
+                    setShowMenu(false);
+                    setActivePage('about');
+                  }}
+                >
+                  about
+                </Link>
+                <hr />
+                <p onClick={loginOrLogout} className="p-2">
+                  {auth.isAuthenticated ? 'Logout' : 'Login'}
+                </p>
+              </div>
+            )}
+          </div>
+          <button
+            onClick={loginOrLogout}
+            className="bg-primary text-white px-3 py-1 rounded-lg ml-3 xxs:hidden ss:block"
+          >
+            {auth.isAuthenticated ? 'Logout' : 'Login'}
+          </button>
         </div>
-        <button
-          onClick={loginOrLogout}
-          className="bg-primary text-white px-3 py-1 rounded-lg ml-3 xxs:hidden ss:block"
-        >
-          {auth.isAuthenticated ? 'Logout' : 'Login'}
-        </button>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 export default Header;
